@@ -1,17 +1,13 @@
 from abc import ABC, abstractmethod
 
 
-class EntityProxyInterface(EntityInterface):
+class EntityProxyInterface:
     @abstractmethod
     def getEntityName(self) -> str:
         pass
 
 
 class EntityInterface(ABC):
-    @abstractmethod
-    def addContext(self, context: EntityProxyInterface) -> bool:
-        pass
-
     def __init__(self, name):
         self._name = name
         self._running = False

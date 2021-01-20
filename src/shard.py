@@ -1,7 +1,8 @@
 from abc import ABC, abstractmethod
-from entity.entityProxy import EntityProxyInterface
+from entity.entity import EntityProxyInterface
 from entity.configurableEntity import ConfigurableEntityInterface
-from agent import AgentEvent
+from agent.agent import AgentEvent
+
 
 class AgentShardDesignation:
     ...
@@ -17,7 +18,7 @@ class AgentShardInterface(ConfigurableEntityInterface):
         pass
 
 
-class ShardContainer(EntityProxyInterface):
+class ShardContainerInterface(EntityProxyInterface):
     @abstractmethod
     def postAgentEvent(self, event: AgentEvent):
         pass

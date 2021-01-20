@@ -26,7 +26,6 @@ class BadParent(IInterface):
 # This has error because not all abstractmethods were implemented
 x = BadParent()
 
-
 # This works
 z = GoodParent()
 z.show()

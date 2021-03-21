@@ -1,0 +1,18 @@
+{
+  "loader": {
+    "agents": [
+      {
+        "name": "agentA",
+        "shards": [
+          "messaging", "monitoring"
+        ]
+      },
+      {
+        "name": "agentB",
+        "shards": [
+          "messaging", "monitoring"
+        ]
+      }
+    ]
+  }
+}

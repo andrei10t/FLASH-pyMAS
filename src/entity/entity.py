@@ -11,6 +11,7 @@ class EntityInterface(ABC):
     def __init__(self, name):
         self._name = name
         self._running = False
+        self.type = "EntityInterface"
 
     def start(self):
         if not self._running:
@@ -47,3 +48,4 @@ class EntityInterface(ABC):
     @abstractmethod
     def asContext(self) -> EntityProxyInterface:
         pass
+

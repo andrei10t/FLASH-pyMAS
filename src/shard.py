@@ -5,7 +5,8 @@ from agent.agent import AgentEvent
 
 
 class AgentShardDesignation:
-    ...
+    def __init__(self):
+        pass
 
 
 class AgentShardInterface(ConfigurableEntityInterface):

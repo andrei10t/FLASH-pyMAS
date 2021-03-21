@@ -15,6 +15,9 @@ def read_xml_config(path: Path):
     ...
 
 #find by name the predefined agent in configs/agents
-def find_agent(name):
+def get_agent(name):
     ...
 
+#find by name the predefined agent in configs/shards
+def get_shard(name):
+    ...

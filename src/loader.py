@@ -1,5 +1,6 @@
 from typing import Mapping
 
+
 class Loader:
     _config = None
 

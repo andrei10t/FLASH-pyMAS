@@ -48,4 +48,3 @@ class EntityInterface(ABC):
     @abstractmethod
     def asContext(self) -> EntityProxyInterface:
         pass
-

@@ -10,14 +10,17 @@ from pathlib import Path
 def read_json_config(path: Path):
     ...
 
-#convert xml at path in dict
+
+# convert xml at path in dict
 def read_xml_config(path: Path):
     ...
 
-#find by name the predefined agent in configs/agents
+
+# find by name the predefined agent in configs/agents
 def get_agent(name):
     ...
 
-#find by name the predefined agent in configs/shards
+
+# find by name the predefined agent in configs/shards
 def get_shard(name):
     ...

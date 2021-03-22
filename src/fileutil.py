@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import errno
 import json
 # class FileUtil(object):
 #     settings = None
@@ -22,7 +23,8 @@ def get_agent(name):
     path = "/Users/atoader/projects/pyMas/configs/agents"
     elem=os.listdir(path)
     print(elem)
-    if os.path.isfile(path):
+    if os.path.isfile(path+os.sep+name+'.json'):
+        return json.loads(path+os.sep+name+'.json')
     #    json load
     else:
         print("")

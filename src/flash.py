@@ -32,7 +32,7 @@ def parse_args(args: List[str]) -> argparse.Namespace:
         "--agent",
         required=False,
         type=lambda name: get_agent(name),
-        default=Agent(),
+        default=dict(),
         action="append",
         # choices=['AgentA', 'AgentB', 'AgentC']
         help="Deploy predefined agent specifying its name",
@@ -70,5 +70,7 @@ def main():
         loader = Loader(params.config_json)
     elif params.config_xml:
         loader = Loader(params.config_json)
-    ag_list = params.agent
-    print(ag_list)
+    ag_list = [Agent(ag_conf['name']) for ag_conf in params.agent]
+
+if __name__ == "__main__":
+    main()

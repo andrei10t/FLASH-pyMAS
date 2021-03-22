@@ -2,8 +2,8 @@ from abc import ABC, abstractmethod
 
 
 class Agent:
-    def __init__(self):
-        self.s = "i am an agent"
+    def __init__(self, name):
+        print("i am agent "+name)
 
     def funct(self):
         return self.s

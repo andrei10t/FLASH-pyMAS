@@ -8,9 +8,10 @@ class EntityProxyInterface:
 
 
 class EntityInterface(ABC):
-    def __init__(self, name):
-        self._name = name
-        self._running = False
+    # def __init__(self, name=None):
+    #     self._name = name
+    #     self._running = False
+    #     self.context = []
 
     def start(self):
         if not self._running:
@@ -19,6 +20,10 @@ class EntityInterface(ABC):
     def stop(self):
         if self._running:
             self._running = False
+
+    @property
+    def context(self) -> set:
+        return self._context
 
     @property
     def isRunning(self) -> bool:

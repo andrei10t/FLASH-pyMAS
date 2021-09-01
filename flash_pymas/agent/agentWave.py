@@ -1,4 +1,4 @@
-from agent.agent import AgentEvent
+# from agent.agent import AgentEvent
 
 _CONFIG = {
     # The serial UID.
@@ -15,12 +15,15 @@ _CONFIG = {
 	"DESTINATION_ELEMENT": "destination-element"
     }
 
-class AgentWave(AgentEvent): 
-    # For immutable static variable behavior, simply omit the property setter
-   def __init__(self, config):
+class AgentWave: 
+    def __init__(self, config: dict, content: str, destinationRoot: str, *destinationElements: str):
        self._config = config if config else _CONFIG
-       
+       self._content = content
+       self._destinationRoot = destinationRoot
+       self._destinationElements = destinationElements
+        
     @property
     def serialVersionUID(self):
         return self._serialVersionUID
+
 

@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
 
-
 class EntityProxyInterface:
     @abstractmethod
     def getEntityName(self) -> str:
@@ -22,8 +21,8 @@ class EntityInterface(ABC):
             self._running = False
 
     @property
-    def context(self) -> set:
-        return self._context
+    def registered_entities(self) -> dict:
+        return self._registered_entities
 
     @property
     def isRunning(self) -> bool:
@@ -33,22 +32,22 @@ class EntityInterface(ABC):
     def getName(self) -> str:
         return self._name
 
-    @abstractmethod
-    def addContext(self, context: EntityProxyInterface) -> bool:
-        pass
+    # @abstractmethod
+    # def addContext(self, context: EntityProxyInterface) -> bool:
+    #     pass
 
-    @abstractmethod
-    def removeContext(self, context: EntityProxyInterface) -> bool:
-        pass
+    # @abstractmethod
+    # def removeContext(self, context: EntityProxyInterface) -> bool:
+    #     pass
 
-    @abstractmethod
-    def addGeneralContext(self, context: EntityProxyInterface) -> bool:
-        pass
+    # @abstractmethod
+    # def addGeneralContext(self, context: EntityProxyInterface) -> bool:
+    #     pass
 
-    @abstractmethod
-    def removeGeneralContext(self, context: EntityProxyInterface) -> bool:
-        pass
+    # @abstractmethod
+    # def removeGeneralContext(self, context: EntityProxyInterface) -> bool:
+    #     pass
 
-    @abstractmethod
-    def asContext(self) -> EntityProxyInterface:
-        pass
+    # @abstractmethod
+    # def asContext(self) -> EntityProxyInterface:
+    #     pass

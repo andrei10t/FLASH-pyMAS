@@ -24,3 +24,9 @@ MAS framework for monitoring and deployment
 
 Features
 --------
+
+
+How To
+--------
+Create a pem certificate for websockets: 
+sudo openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem 

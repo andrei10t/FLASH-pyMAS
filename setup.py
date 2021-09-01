@@ -12,21 +12,21 @@ with open('HISTORY.rst') as history_file:
 
 requirements = [ ]
 
-test_requirements = ['pytest>=3', ]
+test_requirements = ['pytest>=3.7', ]
 
 setup(
     author="Andrei Toader",
     author_email='andrei.toader32@gmail.com',
-    python_requires='>=3.6',
+    python_requires='>=3.7',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Natural Language :: English',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
     ],
     description="MAS framework for monitoring and deployment",
     entry_points={

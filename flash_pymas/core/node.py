@@ -14,6 +14,7 @@ class Node(EntityInterface):
 		if entity_type not in self._registered_entities:
 			self._registered_entities[entity_type] = []
 			self._registered_entities[entity_type].append(entity)
+			logging.info(f"Registered entity {entity_name} with type {entity_type} on node {self._name}.")
 
 	def __enter__(self):
 		self.start()

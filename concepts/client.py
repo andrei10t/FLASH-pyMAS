@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python3.8
 
 # WSS (WS over TLS) client example, with a self-signed certificate
 

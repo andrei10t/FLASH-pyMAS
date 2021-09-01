@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class EntityProxyInterface:
     @abstractmethod
     def getEntityName(self) -> str:

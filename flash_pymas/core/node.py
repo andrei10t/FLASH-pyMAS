@@ -1,6 +1,8 @@
-from flash_pymas.entity import EntityInterface
-from typing import List
 import logging
+from typing import List
+
+from flash_pymas.entity import EntityInterface
+
 
 class Node(EntityInterface):
     def __init__(self, name=None):
@@ -10,7 +12,7 @@ class Node(EntityInterface):
         self._entity_order = []
     
     def register_entity(self, entity_name:str, entity:EntityInterface, entity_type:str):
-        self._entity_order.append(entity)
+		self._entity_order.append(entity)
 		if entity_type not in self._registered_entities:
 			self._registered_entities[entity_type] = []
 			self._registered_entities[entity_type].append(entity)

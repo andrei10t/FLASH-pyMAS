@@ -6,24 +6,29 @@ _CONFIG = {
     # The string separating elements of an endpoint address.
     "ADDRESS_SEPARATOR": "/",
     # The name associated with the content.
-	"CONTENT": "content",
-	 # The name associated with the elements of the source endpoint.
-	"SOURCE_ELEMENT":"source-element", 
-    #The name associated with the complete destination(s), in its(their) original form.
-	"COMPLETE_DESTINATION":"destination-complete",
-	#The name associated with the elements of one of the destinations.
-	"DESTINATION_ELEMENT": "destination-element"
-    }
+    "CONTENT": "content",
+    # The name associated with the elements of the source endpoint.
+    "SOURCE_ELEMENT": "source-element",
+    # The name associated with the complete destination(s), in its(their) original form.
+    "COMPLETE_DESTINATION": "destination-complete",
+    # The name associated with the elements of one of the destinations.
+    "DESTINATION_ELEMENT": "destination-element",
+}
 
-class AgentWave: 
-    def __init__(self, config: dict, content: str, destinationRoot: str, *destinationElements: str):
-       self._config = config if config else _CONFIG
-       self._content = content
-       self._destinationRoot = destinationRoot
-       self._destinationElements = destinationElements
-        
+
+class AgentWave:
+    def __init__(
+        self,
+        config: dict,
+        content: str,
+        destinationRoot: str,
+        *destinationElements: str
+    ):
+        self._config = config if config else _CONFIG
+        self._content = content
+        self._destinationRoot = destinationRoot
+        self._destinationElements = destinationElements
+
     @property
     def serialVersionUID(self):
         return self._serialVersionUID
-
-

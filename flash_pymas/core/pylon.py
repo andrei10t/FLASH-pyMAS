@@ -6,6 +6,7 @@ class EntityProxy(ABC):
     def getEntityName(self):
         pass
 
+
 class Pylon(EntityInterface):
     def __init__(self, name=None):
         # self._running = False
@@ -13,4 +14,3 @@ class Pylon(EntityInterface):
         # self._registered_entities = dict()
         # self._entity_order = []
         self._services = set()
-

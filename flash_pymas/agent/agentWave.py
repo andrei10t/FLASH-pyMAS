@@ -32,3 +32,10 @@ class AgentWave:
     @property
     def serialVersionUID(self):
         return self._serialVersionUID
+
+
+class Message:
+    def __init__(self, source, dest=None, content=None):
+        self._source = source
+        self._dest = dest
+        self._content = content

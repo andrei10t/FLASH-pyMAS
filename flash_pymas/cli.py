@@ -2,6 +2,8 @@
 import argparse
 import sys
 
+from flash_pymas.core.agent import Agent
+
 
 def main():
     # """Console script for flash_pymas."""
@@ -13,7 +15,11 @@ def main():
     # print("Replace this message by putting your code into "
     #       "flash_pymas.cli.main")
     # return 0
+
     params = parse_args(sys.argv[1:])
+    pylon = Pylon()
+    asyncio.get_event_loop().run_until_complete(pylon.start_server)
+    asyncio.get_event_loop().run_forever()
 
 
 def parse_args(args: List[str]) -> argparse.Namespace:
@@ -25,6 +31,7 @@ def parse_args(args: List[str]) -> argparse.Namespace:
     parser.add_argument(
         "-agent",
         required=True,
+        type=lambda _name: Agent(_name),
         metavar="AGENT",
         help="agent to be deployed, specify name, can be used with -shard type",
     )
@@ -32,6 +39,7 @@ def parse_args(args: List[str]) -> argparse.Namespace:
         "-shard",
         choices=["message", "monitor", "gui", "control", "knowledge"],
         required=True,
+        type=lambda _designation: Shard(_designation),
         metavar="SHARD",
         help="shard type, pick a choice",
     )
@@ -45,4 +53,4 @@ def parse_args(args: List[str]) -> argparse.Namespace:
 
 
 if __name__ == "__main__":
-    sys.exit(main())  # pragma: no cover
+    main()  # pragma: no cover

@@ -28,11 +28,10 @@ class Message:
 async def hello():
     uri = "wss://localhost:8765"
     async with websockets.connect(uri, ssl=ssl_context) as websocket:
-        write_something = input("write to someone dear:")
-        message = Message("a", "b", write_something)
+        message = Message("b")
         await websocket.send(pickle.dumps(message))
         greeting = await websocket.recv()
-        # print(f"< {pickle.loads(greeting)}")
+        greeting = await websocket.recv()
         print(f"received: {greeting}")
 
 
